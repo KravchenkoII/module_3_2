@@ -3,7 +3,7 @@ val2 = ('.uk')
 
 
 def send_email(message, recipient, sender="university.help@gmail.com"):
-    if '@' in recipient or sender:
+    if '@' in recipient and sender:
         if recipient.endswith(val1):
             if sender.endswith(val2):
                 return (f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}")
@@ -14,6 +14,7 @@ def send_email(message, recipient, sender="university.help@gmail.com"):
                     return (f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}')
                 else:
                     return (f'Письмо успешно отправлено с адреса {sender}> на адрес {recipient}')
+    return (f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}")
 
 
 print(send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com'))
